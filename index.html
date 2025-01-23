@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>משחק יום הולדת</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Instructions Wizard -->
+    <div id="instructions-screen" class="screen active">
+        <div class="container">
+            <!-- Step 1: Welcome -->
+            <div class="wizard-step active" id="welcome-step">
+                <div class="wizard-content">
+                    <h1>היי מיך!</h1>
+                    <div class="welcome-text">
+                        <p>מוכנה להתחיל במשחק יום ההולדת?</p>
+                        <div class="profile-image-container">
+                            <img src="assets/images/profile.jpg" alt="תמונת פרופיל" class="profile-image">
+                        </div>
+                    </div>
+                    <button class="primary-button next-step">איז</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Birthday -->
+            <div class="wizard-step" id="birthday-step">
+                <div class="wizard-content">
+                    <h1> מזל טוב מתוקה שלי!</h1>
+                    <div class="birthday-text">
+                        <p>זה משחק קטן, שהתוצאה שלו תשפיע על המתנה שתקבלי</p>
+                        <div class="birthday-emoji">
+                            <span>🎂</span>
+                            <span>🎉</span>
+                            <span>🎈</span>
+                        </div>
+                    </div>
+                    <button class="primary-button next-step">המשך</button>
+                    <div class="skip-wizard">
+                        <button class="skip-button" id="skip-wizard-button">דלגי למשחק</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Instructions -->
+            <div class="wizard-step" id="instructions-step">
+                <div class="wizard-content">
+                    <h1>חוקי המשחק</h1>
+                    <div class="instructions-text">
+                        <ul>
+                            <li>בכל שלב תוצג תמונה או סרטון למשך 7 שניות</li>
+                            <li>לאחר מכן תופיע שאלה עם מספר אפשרויות תשובה</li>
+                            <li>את צריכה לבחור את התשובה הנכונה</li>
+                            <li>על כל תשובה נכונה תקבלי 10 נקודות</li>
+                            <li>שאלות בונוס מזכות ב-20 נקודות!</li>
+                            <li>לאחר בחירת תשובה, תוכלי לצפות שוב בתמונה</li>
+                            <li>אבל לא תוכלי לשנות את התשובה שבחרת גברת!</li>
+                        </ul>
+                        <!-- <p class="good-luck">בהצלחה! 🎉</p> -->
+                    </div>
+                    <button class="primary-button" id="start-button">התחל משחק</button>
+                    <div class="skip-wizard">
+                        <button class="skip-button" id="skip-wizard-button">דלגי למשחק</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="wizard-progress">
+                <div class="progress-step active" data-step="1"></div>
+                <div class="progress-step" data-step="2"></div>
+                <div class="progress-step" data-step="3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bonus Screen -->
+    <div id="bonus-screen" class="screen">
+        <div class="bonus-container">
+            <div class="bonus-emoji">⭐</div>
+            <h2 class="bonus-title">שאלת בונוס!</h2>
+            <p class="bonus-text">השאלה הבאה היא שאלת בונוס מיוחדת</p>
+            <div class="bonus-points">תשובה נכונה שווה 20 נקודות!</div>
+            <p class="bonus-text">התרכזו היטב בתמונה...</p>
+            <button id="bonus-continue-button" class="primary-button">המשך</button>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="correct-sound" preload="auto">
+        <source src="assets/sounds/correct.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="incorrect-sound" preload="auto">
+        <source src="assets/sounds/incorrect.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Question Screen -->
+    <div id="question-screen" class="screen">
+        <div class="container">
+            <div id="media-container">
+                <img id="question-image" class="media-content" src="" alt="">
+                <video id="question-video" class="media-content" controls>
+                    <source src="" type="video/mp4">
+                </video>
+                <div id="timer-container">
+                    <div class="timer-icon">⏰</div>
+                    <div class="timer-text"><span id="timer-seconds">4</span></div>
+                </div>
+            </div>
+            <div id="question-container" class="hidden">
+                <div id="bonus-indicator" class="hidden">שאלת בונוס!</div>
+                <h2 id="question-text"></h2>
+                <div id="options-container"></div>
+                <button id="view-media-button" class="secondary-button hidden">לצפיה שוב בתמונה</button>
+                <button id="next-button" class="primary-button hidden">הבא</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Screen -->
+    <div id="final-screen" class="screen">
+        <div class="container">
+            <h1>סיימת!</h1>
+            <div class="score-container">
+                <h2>הניקוד הסופי שלך:</h2>
+                <div id="final-score" class="score"></div>
+            </div>
+            <div class="gifts-message">
+                <p>זכית ב-3 מתנות מיוחדות!</p>
+                <p class="gifts-instruction">לחצו על המתנות כדי לפתוח אותן</p>
+            </div>
+            <div class="gifts-container">
+                <div class="gift-box" data-gift-id="1">
+                    <div class="gift-emoji">🎁</div>
+                    <div class="gift-status">טרם נפתח</div>
+                </div>
+                <div class="gift-box" data-gift-id="2">
+                    <div class="gift-emoji">🎁</div>
+                    <div class="gift-status">טרם נפתח</div>
+                </div>
+                <div class="gift-box" data-gift-id="3">
+                    <div class="gift-emoji">🎁</div>
+                    <div class="gift-status">טרם נפתח</div>
+                </div>
+            </div>
+            <button id="restart-button" class="primary-button">שחק שוב</button>
+        </div>
+    </div>
+
+    <!-- Gift Reveal Screen -->
+    <div id="gift-reveal-screen" class="screen">
+        <div class="container">
+            <div class="gift-reveal-content">
+                <h2>קיבלת מתנה!</h2>
+                <div class="gift-reveal-emoji"></div>
+                <h3 class="gift-reveal-title"></h3>
+                <p class="gift-reveal-description"></p>
+                <button class="primary-button back-to-gifts">חזרה למתנות</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="gameData.js"></script>
+    <script src="game.js"></script>
+</body>
+</html> 
