@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>משחק יום הולדת</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="description" content="משחק טריוויה מיוחד ליום הולדת">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="משחק יום הולדת">
+    
+    <!-- PWA Icons -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-72x72.png">
 </head>
 <body>
     <!-- Instructions Wizard -->
@@ -17,7 +29,7 @@
                     <div class="welcome-text">
                         <p>מוכנה להתחיל במשחק יום ההולדת?</p>
                         <div class="profile-image-container">
-                            <img src="assets/images/profile.jpg" alt="תמונת פרופיל" class="profile-image">
+                            <img src="assets/images/profile.png" alt="תמונת פרופיל" class="profile-image">
                         </div>
                     </div>
                     <button class="primary-button next-step">איז</button>
@@ -163,5 +175,19 @@
 
     <script src="gameData.js"></script>
     <script src="game.js"></script>
+    <script>
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
 </body>
 </html> 
