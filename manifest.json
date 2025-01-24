@@ -2,7 +2,7 @@
     "name": "O-PC",
     "short_name": "O-PC",
     "description": "משחק טריוויה מיוחד ליום הולדת",
-    "start_url": "/",
+    "start_url": "https://alondai1.github.io/birthday-game/",
     "display": "standalone",
     "background_color": "#f5f5f5",
     "theme_color": "#4CAF50",
