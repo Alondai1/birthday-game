@@ -19,9 +19,7 @@ class Game {
     initializeElements() {
         // Wizard elements
         this.wizardSteps = document.querySelectorAll('.wizard-step');
-        this.progressSteps = document.querySelectorAll('.progress-step');
         this.nextStepButtons = document.querySelectorAll('.next-step');
-        this.prevStepButtons = document.querySelectorAll('.prev-step');
         this.skipWizardButton = document.getElementById('skip-wizard-button');
 
         // Screens
@@ -72,10 +70,6 @@ class Game {
             button.addEventListener('click', () => this.nextWizardStep());
         });
 
-        this.prevStepButtons.forEach(button => {
-            button.addEventListener('click', () => this.prevWizardStep());
-        });
-
         // Game buttons
         this.startButton.addEventListener('click', () => this.startGame());
         this.restartButton.addEventListener('click', () => this.restartGame());
@@ -102,24 +96,16 @@ class Game {
     nextWizardStep() {
         if (this.currentWizardStep < this.wizardSteps.length) {
             this.wizardSteps[this.currentWizardStep - 1].classList.remove('active');
-            this.progressSteps[this.currentWizardStep - 1].classList.remove('active');
-            
             this.currentWizardStep++;
-            
             this.wizardSteps[this.currentWizardStep - 1].classList.add('active');
-            this.progressSteps[this.currentWizardStep - 1].classList.add('active');
         }
     }
 
     prevWizardStep() {
         if (this.currentWizardStep > 1) {
             this.wizardSteps[this.currentWizardStep - 1].classList.remove('active');
-            this.progressSteps[this.currentWizardStep - 1].classList.remove('active');
-            
             this.currentWizardStep--;
-            
             this.wizardSteps[this.currentWizardStep - 1].classList.add('active');
-            this.progressSteps[this.currentWizardStep - 1].classList.add('active');
         }
     }
 
@@ -137,10 +123,8 @@ class Game {
         
         // Reset wizard state
         this.wizardSteps.forEach(step => step.classList.remove('active'));
-        this.progressSteps.forEach(step => step.classList.remove('active'));
         this.wizardSteps[0].classList.add('active');
-        this.progressSteps[0].classList.add('active');
-
+        
         // Reset gifts
         this.giftBoxes.forEach(box => {
             box.classList.remove('opened');
