@@ -1,6 +1,6 @@
 {
-    "name": "משחק יום הולדת",
-    "short_name": "משחק יום הולדת",
+    "name": "O-PC",
+    "short_name": "O-PC",
     "description": "משחק טריוויה מיוחד ליום הולדת",
     "start_url": "/",
     "display": "standalone",
