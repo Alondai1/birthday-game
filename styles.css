@@ -415,51 +415,6 @@ body {
     animation-delay: 0.4s;
 }
 
-/* Progress indicator */
-.wizard-progress {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 30px;
-}
-
-.progress-step {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ddd;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.progress-step::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 2px solid var(--primary-color);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.3s ease;
-}
-
-.progress-step.active {
-    background-color: var(--primary-color);
-}
-
-.progress-step.active::after {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-/* Update existing animations */
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
 /* Update button styles for wizard */
 .wizard-content .primary-button,
 .wizard-content .secondary-button {
