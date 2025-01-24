@@ -85,6 +85,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    touch-action: manipulation;
 }
 
 .media-content {
@@ -93,6 +94,9 @@ body {
     object-fit: contain;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    touch-action: pinch-zoom;
+    transform-origin: center;
+    transition: transform 0.3s ease;
 }
 
 /* Question styles */
@@ -186,6 +190,8 @@ body {
     #media-container {
         max-width: 100%;
         margin: 10px auto 60px;
+        overflow: visible;
+        touch-action: manipulation;
     }
     
     .container {
@@ -206,7 +212,14 @@ body {
     }
 
     .media-content {
-        max-height: 70vh;
+        touch-action: pinch-zoom;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .media-content:active {
+        cursor: zoom-in;
     }
 }
 
