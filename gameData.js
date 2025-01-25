@@ -30,163 +30,163 @@ const gameData = [
         correctAnswerId: 3,
         isBonus: false
     },
-    // {
-    //     id: 3,
-    //     title: "באיזה צבע הכפכפים שליד ליבת?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample3.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "ירוק" },
-    //         { id: 2, text: "לבן" },
-    //         { id: 3, text: "צהוב" },
-    //         { id: 4, text: "שחור" }
-    //     ],
-    //     correctAnswerId: 4,
-    //     isBonus: true
-    // },
-    // {
-    //     id: 4,
-    //     title: "כמה חתכה אופיסי יש בתמונה?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample4.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "1" },
-    //         { id: 2, text: "2" },
-    //         { id: 3, text: "3" },
-    //         { id: 4, text: "4" }
-    //     ],
-    //     correctAnswerId: 3,
-    //     isBonus: false
-    // },
-    // {
-    //     id: 5,
-    //     title: "איזה מיתוג יש לכוסות בירה?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample5.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "גולדסטארכס" },
-    //         { id: 2, text: "היינקנכס" },
-    //         { id: 3, text: "קורונהכס" },
-    //         { id: 4, text: "טובורגכס" }
-    //     ],
-    //     correctAnswerId: 1,
-    //     isBonus: false
-    // },
-    // {
-    //     id: 6,
-    //     title: "כמה פעמים עשינו ספונג'ה מאז שנכנסנו לבית?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample6.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "1" },
-    //         { id: 2, text: "0" },
-    //         { id: 3, text: "3" },
-    //         { id: 4, text: "2" }
-    //     ],
-    //     correctAnswerId: 4,
-    //     isBonus: true
-    // },
-    // {
-    //     id: 7,
-    //     title: "לאיזה צד של הקיר המיטה יותר קרובה?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample7.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "לצד של מיכך" },
-    //         { id: 2, text: "לצד של אלונכס" }
+    {
+        id: 3,
+        title: "באיזה צבע הכפכפים שליד ליבת?",
+        media: {
+            type: "image",
+            src: "assets/images/sample3.jpg"
+        },
+        options: [
+            { id: 1, text: "ירוק" },
+            { id: 2, text: "לבן" },
+            { id: 3, text: "צהוב" },
+            { id: 4, text: "שחור" }
+        ],
+        correctAnswerId: 4,
+        isBonus: true
+    },
+    {
+        id: 4,
+        title: "כמה חתכה אופיסי יש בתמונה?",
+        media: {
+            type: "image",
+            src: "assets/images/sample4.jpg"
+        },
+        options: [
+            { id: 1, text: "1" },
+            { id: 2, text: "2" },
+            { id: 3, text: "3" },
+            { id: 4, text: "4" }
+        ],
+        correctAnswerId: 3,
+        isBonus: false
+    },
+    {
+        id: 5,
+        title: "איזה מיתוג יש לכוסות בירה?",
+        media: {
+            type: "image",
+            src: "assets/images/sample5.jpg"
+        },
+        options: [
+            { id: 1, text: "גולדסטארכס" },
+            { id: 2, text: "היינקנכס" },
+            { id: 3, text: "קורונהכס" },
+            { id: 4, text: "טובורגכס" }
+        ],
+        correctAnswerId: 1,
+        isBonus: false
+    },
+    {
+        id: 6,
+        title: "כמה פעמים עשינו ספונג'ה מאז שנכנסנו לבית?",
+        media: {
+            type: "image",
+            src: "assets/images/sample6.jpg"
+        },
+        options: [
+            { id: 1, text: "1" },
+            { id: 2, text: "0" },
+            { id: 3, text: "3" },
+            { id: 4, text: "2" }
+        ],
+        correctAnswerId: 4,
+        isBonus: true
+    },
+    {
+        id: 7,
+        title: "לאיזה צד של הקיר המיטה יותר קרובה?",
+        media: {
+            type: "image",
+            src: "assets/images/sample7.jpg"
+        },
+        options: [
+            { id: 1, text: "לצד של מיכך" },
+            { id: 2, text: "לצד של אלונכס" }
             
-    //     ],
-    //     correctAnswerId: 2,
-    //     isBonus: false
-    // },
-    // {
-    //     id: 8,
-    //     title: "האם היה כיף בקמפינג עם אביב ואיתי?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample8.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "כן" },
-    //         { id: 2, text: "לא" }
+        ],
+        correctAnswerId: 2,
+        isBonus: false
+    },
+    {
+        id: 8,
+        title: "האם היה כיף בקמפינג עם אביב ואיתי?",
+        media: {
+            type: "image",
+            src: "assets/images/sample8.jpg"
+        },
+        options: [
+            { id: 1, text: "כן" },
+            { id: 2, text: "לא" }
             
-    //     ],
-    //     correctAnswerId: 2,
-    //     isBonus: false
-    // },
-    // {
-    //     id: 9,
-    //     title: "באיזה צבע הלק ברגליים של מיך?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample9.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "לבן" },
-    //         { id: 2, text: "אפור" },
-    //         { id: 3, text: "ירוק" },
-    //         { id: 4, text: "כתום" }
-    //     ],
-    //     correctAnswerId: 4,
-    //     isBonus: false
-    // },
-    // {
-    //     id: 10,
-    //     title: "באיזה צבע הלק של מיכל שנרדמת עם הפלאפון ביד?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample10.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "כתום" },
-    //         { id: 2, text: "אפור" },
-    //         { id: 3, text: "שחור" },
-    //         { id: 4, text: "לבן" }
-    //     ],
-    //     correctAnswerId: 1,
-    //     isBonus: true
-    // },
-    // {
-    //     id: 11,
-    //     title: "כן, עוד שאלת לק, באיזה צבע הלק של מיך?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample11.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "אפור" },
-    //         { id: 2, text: "בורדו" },
-    //         { id: 3, text: "שחור" },
-    //         { id: 4, text: "לבן" }
-    //     ],
-    //     correctAnswerId: 2,
-    //     isBonus: false
-    // },
-    // {
-    //     id: 12,
-    //     title: "חשבת שזו עוד שאלה על הלק? לא! החולצה של הבחורה שמאחורייך היא:",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample12.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "פסים לאורך" },
-    //         { id: 2, text: "פסים לרוחב" },
+        ],
+        correctAnswerId: 2,
+        isBonus: false
+    },
+    {
+        id: 9,
+        title: "באיזה צבע הלק ברגליים של מיך?",
+        media: {
+            type: "image",
+            src: "assets/images/sample9.jpg"
+        },
+        options: [
+            { id: 1, text: "לבן" },
+            { id: 2, text: "אפור" },
+            { id: 3, text: "ירוק" },
+            { id: 4, text: "כתום" }
+        ],
+        correctAnswerId: 4,
+        isBonus: false
+    },
+    {
+        id: 10,
+        title: "באיזה צבע הלק של מיכל שנרדמת עם הפלאפון ביד?",
+        media: {
+            type: "image",
+            src: "assets/images/sample10.jpg"
+        },
+        options: [
+            { id: 1, text: "כתום" },
+            { id: 2, text: "אפור" },
+            { id: 3, text: "שחור" },
+            { id: 4, text: "לבן" }
+        ],
+        correctAnswerId: 1,
+        isBonus: true
+    },
+    {
+        id: 11,
+        title: "כן, עוד שאלת לק, באיזה צבע הלק של מיך?",
+        media: {
+            type: "image",
+            src: "assets/images/sample11.jpg"
+        },
+        options: [
+            { id: 1, text: "אפור" },
+            { id: 2, text: "בורדו" },
+            { id: 3, text: "שחור" },
+            { id: 4, text: "לבן" }
+        ],
+        correctAnswerId: 2,
+        isBonus: false
+    },
+    {
+        id: 12,
+        title: "חשבת שזו עוד שאלה על הלק? לא! החולצה של הבחורה שמאחורייך היא:",
+        media: {
+            type: "image",
+            src: "assets/images/sample12.jpg"
+        },
+        options: [
+            { id: 1, text: "פסים לאורך" },
+            { id: 2, text: "פסים לרוחב" },
 
-    //     ],
-    //     correctAnswerId: 2,
-    //     isBonus: false
-    // },
+        ],
+        correctAnswerId: 2,
+        isBonus: false
+    },
     // {
     //     id: 13,
     //     title: "איזה צמח הכי גדול בבית?",
