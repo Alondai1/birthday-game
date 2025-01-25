@@ -62,6 +62,12 @@ class Game {
         // Sound elements
         this.correctSound = document.getElementById('correct-sound');
         this.incorrectSound = document.getElementById('incorrect-sound');
+
+        // Full image screen elements
+        this.fullImageScreen = document.getElementById('full-image-screen');
+        this.fullSizeImage = document.getElementById('full-size-image');
+        this.fullSizeVideo = document.getElementById('full-size-video');
+        this.returnToQuestionButton = document.getElementById('return-to-question');
     }
 
     addEventListeners() {
@@ -74,7 +80,7 @@ class Game {
         this.startButton.addEventListener('click', () => this.startGame());
         this.restartButton.addEventListener('click', () => this.restartGame());
         this.nextButton.addEventListener('click', () => this.showNextQuestion());
-        this.viewMediaButton.addEventListener('click', () => this.showMedia());
+        this.viewMediaButton.addEventListener('click', () => this.showFullSizeMedia());
         this.bonusContinueButton.addEventListener('click', () => {
             this.switchScreen(this.bonusScreen, this.questionScreen);
             this.showQuestion(this.currentQuestionIndex);
@@ -91,6 +97,9 @@ class Game {
 
         // Skip wizard
         this.skipWizardButton.addEventListener('click', () => this.startGame());
+
+        // Add event listeners for full image view
+        this.returnToQuestionButton.addEventListener('click', () => this.returnToQuestion());
     }
 
     nextWizardStep() {
@@ -150,6 +159,7 @@ class Game {
         this.nextButton.classList.add('hidden');
         this.bonusIndicator.classList.add('hidden');
         this.timerContainer.classList.remove('visible');
+        this.mediaContainer.classList.remove('review-mode');
 
         // Show bonus indicator if applicable
         if (question.isBonus) {
@@ -208,6 +218,7 @@ class Game {
 
     hideMedia() {
         this.mediaContainer.classList.add('hidden');
+        this.mediaContainer.classList.remove('review-mode');
         this.timerContainer.classList.remove('visible');
         clearInterval(this.countdownInterval);
         if (this.questionVideo.src) {
@@ -219,6 +230,7 @@ class Game {
     showMedia() {
         const question = this.questions[this.currentQuestionIndex];
         this.mediaContainer.classList.remove('hidden');
+        this.mediaContainer.classList.add('review-mode');
         this.setupMedia(question.media);
     }
 
@@ -326,6 +338,31 @@ class Game {
 
         // Show reveal screen
         this.switchScreen(this.finalScreen, this.giftRevealScreen);
+    }
+
+    showFullSizeMedia() {
+        const question = this.questions[this.currentQuestionIndex];
+        this.fullSizeImage.classList.remove('active');
+        this.fullSizeVideo.classList.remove('active');
+        
+        if (question.media.type === 'image') {
+            this.fullSizeImage.src = question.media.src;
+            this.fullSizeImage.classList.add('active');
+        } else if (question.media.type === 'video') {
+            this.fullSizeVideo.src = question.media.src;
+            this.fullSizeVideo.classList.add('active');
+            this.fullSizeVideo.play();
+        }
+        
+        this.switchScreen(this.questionScreen, this.fullImageScreen);
+    }
+
+    returnToQuestion() {
+        if (this.fullSizeVideo.src) {
+            this.fullSizeVideo.pause();
+            this.fullSizeVideo.currentTime = 0;
+        }
+        this.switchScreen(this.fullImageScreen, this.questionScreen);
     }
 }
 
