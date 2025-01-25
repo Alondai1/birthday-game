@@ -358,7 +358,7 @@ body {
     transform: translateX(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
     min-height: auto;
-    padding-bottom: 60px; /* Space for skip button */
+     /* Space for skip button */
 }
 
 .wizard-step.active {
@@ -370,7 +370,7 @@ body {
 .wizard-content {
     max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
 }
 
@@ -590,10 +590,7 @@ body {
 }
 
 /* Update wizard step padding */
-#birthday-step .wizard-content,
-#instructions-step .wizard-content {
-    padding-bottom: 20px;
-}
+
 
 .profile-image-container {
     width: 250px;
@@ -649,14 +646,14 @@ body {
 #welcome-step .wizard-content {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 80vh;
     justify-content: space-between;
-    padding: 20px;
+    /* padding: 40px 20px 80px; */
 }
 
 #welcome-step h1 {
     font-size: 2.5em;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 #welcome-step .welcome-text {
@@ -665,16 +662,16 @@ body {
     flex-direction: column;
     justify-content: center;
     margin: 0;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 #welcome-step .welcome-text p {
     font-size: 1.4em;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #welcome-step .primary-button {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 1.2em;
     padding: 15px 40px;
 }
@@ -682,21 +679,21 @@ body {
 /* Update responsive styles */
 @media (max-width: 768px) {
     #welcome-step .wizard-content {
-        padding: 15px;
+        /* padding: 30px 15px 70px; */
     }
 
     #welcome-step h1 {
         font-size: 2em;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     #welcome-step .welcome-text p {
         font-size: 1.2em;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     #welcome-step .primary-button {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 }
 
