@@ -1,5 +1,5 @@
 // Global Settings
-const IMAGE_DISPLAY_DURATION = 7; // Duration in seconds for displaying each image
+const IMAGE_DISPLAY_DURATION = 1; // Duration in seconds for displaying each image
 const IMAGE_DISPLAY_DURATION_MS = IMAGE_DISPLAY_DURATION * 1000; // Duration in milliseconds
 
 class Game {
@@ -68,9 +68,26 @@ class Game {
         this.fullSizeImage = document.getElementById('full-size-image');
         this.fullSizeVideo = document.getElementById('full-size-video');
         this.returnToQuestionButton = document.getElementById('return-to-question');
+        
+        // Debug check if elements exist
+        console.log('Elements initialized:', {
+            fullImageScreen: !!this.fullImageScreen,
+            returnButton: !!this.returnToQuestionButton
+        });
+
+        // Add event listener for return to question button right after initialization
+        if (this.returnToQuestionButton) {
+            this.returnToQuestionButton.addEventListener('click', () => {
+                console.log('Return to question clicked');
+                this.returnToQuestion();
+            });
+        } else {
+            console.error('Return to question button not found');
+        }
     }
 
     addEventListeners() {
+        
         // Wizard navigation
         this.nextStepButtons.forEach(button => {
             button.addEventListener('click', () => this.nextWizardStep());
@@ -96,10 +113,9 @@ class Game {
         });
 
         // Skip wizard
-        this.skipWizardButton.addEventListener('click', () => this.startGame());
-
-        // Add event listeners for full image view
-        this.returnToQuestionButton.addEventListener('click', () => this.returnToQuestion());
+        if (this.skipWizardButton) {
+            this.skipWizardButton.addEventListener('click', () => this.startGame());
+        }
     }
 
     nextWizardStep() {
@@ -150,24 +166,33 @@ class Game {
 
     showQuestion(index) {
         const question = this.questions[index];
-        if (!question) return;
-
-        // Reset UI state
-        this.questionContainer.classList.remove('visible');
+        
+        // Reset state
+        this.hasAnswered = false;
         this.questionContainer.classList.add('hidden');
+        this.questionContainer.classList.remove('visible');
         this.viewMediaButton.classList.add('hidden');
         this.nextButton.classList.add('hidden');
-        this.bonusIndicator.classList.add('hidden');
-        this.timerContainer.classList.remove('visible');
-        this.mediaContainer.classList.remove('review-mode');
+        
+        // Show media container and reset its content
+        this.mediaContainer.style.display = 'block';
+        this.questionImage.classList.remove('active');
+        this.questionVideo.classList.remove('active');
+        
+        // Set up media content
+        if (question.media.type === 'image') {
+            this.questionImage.src = question.media.src;
+            this.questionImage.classList.add('active');
+        } else if (question.media.type === 'video') {
+            this.questionVideo.src = question.media.src;
+            this.questionVideo.classList.add('active');
+            this.questionVideo.play();
+        }
 
         // Show bonus indicator if applicable
         if (question.isBonus) {
             this.bonusIndicator.classList.remove('hidden');
         }
-
-        // Setup media
-        this.setupMedia(question.media);
 
         // Start timer
         this.startTimer();
@@ -217,14 +242,19 @@ class Game {
     }
 
     hideMedia() {
-        this.mediaContainer.classList.add('hidden');
-        this.mediaContainer.classList.remove('review-mode');
-        this.timerContainer.classList.remove('visible');
-        clearInterval(this.countdownInterval);
+        // Stop video if it's playing
         if (this.questionVideo.src) {
             this.questionVideo.pause();
             this.questionVideo.currentTime = 0;
         }
+
+        // Hide the timer
+        this.timerContainer.classList.remove('visible');
+        
+        // Hide the media container and its contents
+        this.mediaContainer.style.display = 'none';
+        this.questionImage.classList.remove('active');
+        this.questionVideo.classList.remove('active');
     }
 
     showMedia() {
@@ -301,6 +331,9 @@ class Game {
     showNextQuestion() {
         this.currentQuestionIndex++;
         
+        // Reset media container display state
+        this.mediaContainer.style.display = 'block';
+        
         // Check if next question exists and is a bonus question
         if (this.currentQuestionIndex < this.questions.length) {
             const nextQuestion = this.questions[this.currentQuestionIndex];
@@ -358,11 +391,21 @@ class Game {
     }
 
     returnToQuestion() {
+        // Stop video if playing
         if (this.fullSizeVideo.src) {
             this.fullSizeVideo.pause();
             this.fullSizeVideo.currentTime = 0;
         }
+        
+        // Use the existing switchScreen method
         this.switchScreen(this.fullImageScreen, this.questionScreen);
+        
+        // Hide the media container
+        this.mediaContainer.style.display = 'none';
+        
+        // Ensure question content is visible
+        this.questionContainer.classList.remove('hidden');
+        this.questionContainer.classList.add('visible');
     }
 }
 
