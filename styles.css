@@ -78,18 +78,20 @@ body {
 #media-container {
     width: 100%;
     max-width: 1000px;
-    margin: 20px auto 80px;
+    margin: 10px auto;
     position: relative;
-    padding-bottom: 60px;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     touch-action: manipulation;
+    overflow: hidden;
 }
 
 .media-content {
     width: 100%;
-    max-height: 80vh;
+    height: 100%;
+    max-height: 70vh;
     object-fit: contain;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -187,12 +189,17 @@ body {
 /* Media queries for mobile optimization */
 @media (max-width: 768px) {
     #media-container {
-        max-width: 100%;
-        margin: 10px auto 60px;
-        overflow: visible;
-        touch-action: manipulation;
+        margin: 5px auto;
     }
     
+    .media-content {
+        max-height: 60vh;
+    }
+    
+    #timer-container {
+        bottom: 5px;
+    }
+
     .container {
         padding: 10px;
     }
@@ -700,7 +707,7 @@ body {
 /* Timer styles */
 #timer-container {
     position: absolute;
-    bottom: -50px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
