@@ -239,7 +239,7 @@ const gameData = [
         title: "איך התגובה של מיכל?",
         media: {
             type: "image",
-            src: "assets/images/sample16.jpg"
+            src: "assets/images/sample16.jpeg"
         },
         options: [
             { id: 1, text: "מצועצעת ומזוייפת" },
@@ -258,7 +258,7 @@ const gameData = [
             src: "assets/images/sample17.jpeg"
         },
         options: [
-            { id: 1, text: "11" },
+            { id: 1, text: "12" },
             { id: 2, text: "6" },
             { id: 3, text: "17" },
             { id: 4, text: "9" }
