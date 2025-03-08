@@ -91,7 +91,7 @@ const gameData = [
             { id: 3, text: "3" },
             { id: 4, text: "2" }
         ],
-        correctAnswerId: 4,
+        correctAnswerId: 3,
         isBonus: true
     },
     {
@@ -187,86 +187,85 @@ const gameData = [
         correctAnswerId: 2,
         isBonus: false
     },
-    // {
-    //     id: 13,
-    //     title: "איזה צמח הכי גדול בבית?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample13.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "פיקוס" },
-    //         { id: 2, text: "מונסטרה" },
-    //         { id: 3, text: "סחלב" },
-    //         { id: 4, text: "קקטוס" }
-    //     ],
-    //     correctAnswerId: 2,
-    //     isBonus: false
-    // },
-    // {
-    //     id: 14,
-    //     title: "מה השם של החתולה הראשונה שהאכלנו בחצר?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample14.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "שחורי" },
-    //         { id: 2, text: "לבנונת" },
-    //         { id: 3, text: "מנומרת" },
-    //         { id: 4, text: "ג'ינג'ית" }
-    //     ],
-    //     correctAnswerId: 4,
-    //     isBonus: true
-    // },
-    // {
-    //     id: 15,
-    //     title: "איזה משחק שיחקנו הכי הרבה ביחד?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample15.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "מונופול" },
-    //         { id: 2, text: "טאקי" },
-    //         { id: 3, text: "רמיקוב" },
-    //         { id: 4, text: "שש-בש" }
-    //     ],
-    //     correctAnswerId: 2,
-    //     isBonus: false
-    // },
-    // {
-    //     id: 16,
-    //     title: "מה הצבע של המגבות במקלחת?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample16.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "תכלת" },
-    //         { id: 2, text: "ורוד" },
-    //         { id: 3, text: "אפור" },
-    //         { id: 4, text: "לבן" }
-    //     ],
-    //     correctAnswerId: 3,
-    //     isBonus: false
-    // },
-    // {
-    //     id: 17,
-    //     title: "איזה טעם גלידה אנחנו הכי אוהבים?",
-    //     media: {
-    //         type: "image",
-    //         src: "assets/images/sample17.jpg"
-    //     },
-    //     options: [
-    //         { id: 1, text: "וניל" },
-    //         { id: 2, text: "שוקולד" },
-    //         { id: 3, text: "פיסטוק" },
-    //         { id: 4, text: "קוקילידה" }
-    //     ],
-    //     correctAnswerId: 4,
-    //     isBonus: false
-    // },
+    {
+        id: 13,
+        title: "מי הציגה לנו את הציור המפורסם?",
+        media: {
+            type: "image",
+            src: "assets/images/sample13.png"
+        },
+        options: [
+            { id: 1, text: "עליזה בן יוסף" },
+            { id: 2, text: "אליזבת בן פורת" },
+            { id: 3, text: "שושי יוספי"},
+            { id: 4, text: "ראומה פרץ"}
+        ],
+        correctAnswerId: 2,
+        isBonus: false
+    },
+    {
+        id: 14,
+        title: "איזה מאכל מוצג בתמונה?",
+        media: {
+            type: "image",
+            src: "assets/images/sample14.jpeg"
+        },
+        options: [
+            { id: 1, text: "מרמומה" },
+            { id: 2, text: "מטבוחה" },
+            { id: 3, text: "מחפופה" },
+            { id: 4, text: "מלפוף" }
+        ],
+        correctAnswerId: 1,
+        isBonus: false
+    },
+    {
+        id: 15,
+        title: "באיזה צבעים התוכיז?",
+        media: {
+            type: "image",
+            src: "assets/images/sample15.jpeg"
+        },
+        options: [
+            { id: 1, text: "צהוב, ירוק, אדום" },
+            { id: 2, text: "כחול, צהוב, ירוק" },
+            { id: 3, text: "צהוב, אדום, חום" },
+        ],
+        correctAnswerId: 2,
+        isBonus: false
+    },
+    {
+        id: 16,
+        title: "איך התגובה של מיכל?",
+        media: {
+            type: "image",
+            src: "assets/images/sample16.jpg"
+        },
+        options: [
+            { id: 1, text: "מצועצעת ומזוייפת" },
+            { id: 2, text: "נחמדה" },
+            { id: 3, text: "אותנטית" },
+            { id: 4, text: "מפרגנת" }
+        ],
+        correctAnswerId: 1,
+        isBonus: false
+    },
+    {
+        id: 17,
+        title: "כמה קופסאות על השולחן?",
+        media: {
+            type: "image",
+            src: "assets/images/sample17.jpeg"
+        },
+        options: [
+            { id: 1, text: "11" },
+            { id: 2, text: "6" },
+            { id: 3, text: "17" },
+            { id: 4, text: "9" }
+        ],
+        correctAnswerId: 1,
+        isBonus: false
+    },
     // {
     //     id: 18,
     //     title: "מה השעה שאנחנו בדרך כלל קמים בבוקר?",
@@ -288,20 +287,20 @@ const gameData = [
 const giftsData = [
     {
         id: 1,
-        title: "יום פינוק בספא",
-        description: "יום של פינוק מושלם בספא היוקרתי, כולל עיסוי מפנק ושימוש במתקני הספא",
-        emoji: "💆‍♀️"
+        title: "גרביים מעוצבות",
+        description: "תדמייני שההפתעה הזאת עדין לא נהרסה ואת מגלה על זה לראשונה",
+        emoji: "🧦"
     },
     {
         id: 2,
-        title: "חבילת שוקולדים מפנקת",
-        description: "מארז מפנק של שוקולדים משובחים ממותגים מובילים",
-        emoji: "🍫"
+        title: "החבילה הקטנה יותר",
+        description: "חשוב מאד לחיי היום יום",
+        emoji: "👌"
     },
     {
         id: 3,
-        title: "ארוחה זוגית במסעדה",
-        description: "ארוחה זוגית מפנקת במסעדת שף, כולל מנה ראשונה, עיקרית וקינוח",
-        emoji: "🍽️"
+        title: "הבילה הגדולה יותר",
+        description: "גם מאד חשוב לחיי היום יום",
+        emoji: "❤️"
     }
 ]; 

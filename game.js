@@ -1,5 +1,5 @@
 // Global Settings
-const IMAGE_DISPLAY_DURATION = 7; // Duration in seconds for displaying each image
+const IMAGE_DISPLAY_DURATION = 10; // Duration in seconds for displaying each image
 const IMAGE_DISPLAY_DURATION_MS = IMAGE_DISPLAY_DURATION * 1000; // Duration in milliseconds
 
 class Game {
