@@ -302,5 +302,11 @@ const giftsData = [
         title: "הבילה הגדולה יותר",
         description: "גם מאד חשוב לחיי היום יום",
         emoji: "❤️"
+    },
+    {
+        id: 4,
+        title: "החבילה הפיצפונת",
+        description: "זה סתם לכיף",
+        emoji: "✌️"
     }
 ]; 
